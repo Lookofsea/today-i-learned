@@ -154,7 +154,7 @@ function NewFactForm({ setFacts, setShowForm }) {
         onChange={(e) => setText(e.target.value)}
         disabled={isUploading}
       />
-      <span>{200 - textLength}</span>
+      <span>Remain {200 - textLength} letters </span>
       <input
         value={source}
         type="text"
@@ -259,6 +259,10 @@ function Fact({ fact, setFacts }) {
         <a className="source" href={fact.source} target="_blank">
           (Source)
         </a>
+        {/* 添加时间戳 */}
+        <span className="vote-buttons button">
+          <button>{fact.created_at.split("T")[0]}</button>
+        </span>
       </p>
       <span
         className="tag"
@@ -269,7 +273,7 @@ function Fact({ fact, setFacts }) {
       >
         {fact.category}
       </span>
-      <div className="vote-buttons">
+      <div className="vote-buttons ">
         {fact.votes_birthday === 0 ? (
           <>
             <button
