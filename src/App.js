@@ -273,7 +273,7 @@ function Fact({ fact, setFacts }) {
       >
         {fact.category}
       </span>
-      <div className="vote-buttons ">
+      <div className="vote-buttons">
         {fact.votes_birthday === 0 ? (
           <>
             <button
